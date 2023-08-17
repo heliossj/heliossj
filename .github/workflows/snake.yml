@@ -1,4 +1,4 @@
-name: Generate Datas
+name: Generate snake game
 
 on:
   schedule: # execute every 12 hours
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Snake Animation
-      - uses: Platane/snk@master
+      - uses: Sutil/snk@master
         id: snake-gif
         with:
-          github_user_name: heliossj
+          github_user_name: ${{ github.repository_owner }}
           svg_out_path: dist/github-contribution-grid-snake2.svg
           snake_color: 'blue'
 
@@ -24,3 +24,4 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
